@@ -23,19 +23,18 @@ public class IGameStateTest {
 
 	static IGameState gameState;
 	static List<ISpecie> maListeSpec;
-	IAnimal boeuf =new IAnimalTest().getTestInstance();
+	static IAnimal boeuf =new IAnimalTest().getTestInstance();
 	
 
 	@Before
 	public  void getInstance(){
 		
 		ISpecie specie =new ISpecifieTest().getTestInstance();
-		
-		
-		
+			
 		
 	gameState=mock(IGameState.class);
 	when(gameState.getProgression()).thenReturn(20);
+	when(gameState.getName()).thenReturn("gameState");
 	doThrow(new IllegalArgumentException()).when(gameState).catchAnimal(boeuf);
 	//when(gameState.catchAnimal(boeuf)).thenThrow(NullPointerException.class);;
 	doThrow(new IllegalArgumentException()).when(gameState).getSpecieLevel(specie);
@@ -47,5 +46,19 @@ public class IGameStateTest {
 	
 	
 
+	}
+	public static IGameState getTestInstance() {
+		
+		ISpecie specie =new ISpecifieTest().getTestInstance();
+			
+		
+	gameState=mock(IGameState.class);
+	when(gameState.getProgression()).thenReturn(20);
+	when(gameState.getName()).thenReturn("gameState");
+	doThrow(new IllegalArgumentException()).when(gameState).catchAnimal(boeuf);
+	//when(gameState.catchAnimal(boeuf)).thenThrow(NullPointerException.class);;
+	doThrow(new IllegalArgumentException()).when(gameState).getSpecieLevel(specie);
+
+		return gameState;
 	}
 }
