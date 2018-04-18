@@ -1,35 +1,50 @@
 package fr.univavignon.rodeo;
 
 
+
+import java.util.ArrayList;
+import java.util.List;
+
 import fr.univavignon.rodeo.api.IAnimal;
 import fr.univavignon.rodeo.api.ISpecie;
 
 import org.junit.*;
-import org.mockito.*;
 
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.mock;
+import fr.univavignon.rodeo.IAnimalTest;
 
-import java.util.*;
 
 public class ISpecifieTest {
 	
 	ISpecie specie;
-	List<IAnimal> list;
-	
+	static List<IAnimal> maListeA;
+	 
+	  
+	 
+
+	 
 	@Before
 	public  void getInstance(){
+		
+	
 		specie=mock(ISpecie.class);
 	when(specie.getArea()).thenReturn(1);
-	when(specie.getAnimals()).thenReturn(list);
+	IAnimal animal = IAnimalTest.getTestInstance();
+	maListeA= new ArrayList();
+	maListeA.add(animal);
+	when(specie.getAnimals()).thenReturn(maListeA);
 	when(specie.getName()).thenReturn("MyArea");
 
 	}
 	@Test
-	public void testBlabla(){
+	public void testBla(){
+		
 	assertEquals(1,specie.getArea());
-	System.out.println(specie.getArea());
+	System.out.println(specie.getAnimals());
+	
+
 	}
 
 }
