@@ -1,5 +1,51 @@
 package fr.univavignon.rodeo;
 
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+
+import fr.univavignon.rodeo.api.IAnimal;
+import fr.univavignon.rodeo.api.IEnvironment;
+import fr.univavignon.rodeo.api.IGameState;
+import fr.univavignon.rodeo.api.ISpecie;
+
+import org.junit.*;
+
+import static org.junit.Assert.*;
+import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.doThrow;
+import static org.mockito.Mockito.mock;
+
 public class IGameStateTest {
 
+	static IGameState gameState;
+	static List<ISpecie> maListeSpec;
+	IAnimal boeuf =new IAnimalTest().getTestInstance();
+	
+
+	@Before
+	public  void getInstance(){
+		
+		ISpecie specie =new ISpecifieTest().getTestInstance();
+		
+		
+		
+		
+	gameState=mock(IGameState.class);
+	when(gameState.getProgression()).thenReturn(20);
+	doThrow(new IllegalArgumentException()).when(gameState).catchAnimal(boeuf);
+	//when(gameState.catchAnimal(boeuf)).thenThrow(NullPointerException.class);;
+	doThrow(new IllegalArgumentException()).when(gameState).getSpecieLevel(specie);
+	}
+	@Test
+	public void testBla(){
+		
+		assertEquals(20,gameState.getProgression());
+	
+	
+
+	}
 }
