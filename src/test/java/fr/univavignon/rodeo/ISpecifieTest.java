@@ -18,12 +18,22 @@ import fr.univavignon.rodeo.IAnimalTest;
 
 public class ISpecifieTest {
 	
-	ISpecie specie;
+	static ISpecie specie;
 	static List<IAnimal> maListeA;
 	 
 	  
 	 
-
+	public  static ISpecie getTestInstance(){
+		specie=mock(ISpecie.class);
+		when(specie.getArea()).thenReturn(1);
+		IAnimal animal = IAnimalTest.getTestInstance();
+		maListeA= new ArrayList();
+		maListeA.add(animal);
+		when(specie.getAnimals()).thenReturn(maListeA);
+		when(specie.getName()).thenReturn("MyArea");
+		
+		return specie;	
+	}
 	 
 	@Before
 	public  void getInstance(){

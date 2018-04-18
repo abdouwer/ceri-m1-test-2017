@@ -16,7 +16,7 @@ import static org.mockito.Mockito.mock;
 public class IAnimalTest {
 
 	static IAnimal animal;
-	static List<IAnimal> ajouter;
+
 	
 	
 	@Before
