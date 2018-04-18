@@ -22,6 +22,7 @@ public class ISpecifieTest {
 	public  void getInstance(){
 		specie=mock(ISpecie.class);
 	when(specie.getArea()).thenReturn(1);
+	when(specie.getAnimals()).thenReturn(list);
 	when(specie.getName()).thenReturn("MyArea");
 
 	}
