@@ -20,13 +20,7 @@ public class IAnimalTest {
 	when(animal.getName()).thenReturn("Mamadou");
 	when(animal.getXP()).thenReturn(12);
 	
-	when(animal.isBoss()).thenReturn(true);
-	when(animal.getName()).thenReturn("karim");
-	when(animal.getXP()).thenReturn(12);
-	
-	when(animal.isBoss()).thenReturn(false);
-	when(animal.getName()).thenReturn("Rus");
-	when(animal.getXP()).thenReturn(12);
+
 	}
 	
 	/*protected IAnimal getTestInstance(){
