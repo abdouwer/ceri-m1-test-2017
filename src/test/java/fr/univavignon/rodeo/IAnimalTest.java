@@ -1,5 +1,7 @@
 package fr.univavignon.rodeo;
 
+import java.util.List;
+
 import fr.univavignon.rodeo.api.IAnimal;
 
 import org.junit.*;
@@ -12,6 +14,8 @@ import static org.mockito.Mockito.mock;
 public class IAnimalTest {
 
 	IAnimal animal;
+
+	
 	
 	@Before
 	public  void getInstance(){
@@ -20,6 +24,7 @@ public class IAnimalTest {
 	when(animal.getName()).thenReturn("Mamadou");
 	when(animal.getXP()).thenReturn(12);
 	
+
 
 	}
 	
@@ -32,6 +37,7 @@ public class IAnimalTest {
 	public void testBlabla(){
 	assertEquals(false,animal.isBoss());
 	System.out.println(animal.getXP());
+
 
 	}
 }
